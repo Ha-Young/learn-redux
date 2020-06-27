@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './exercise';
+import { Provider } from 'react-redux'; //  react-redux is in order to apply redux in react project
+import { createStore } from 'redux'; // createStore is have to load rootReducer
+import rootReducer from './modules'; // import folder name is import index.js inside folder
+
+const store = createStore(rootReducer);
+// console.log(store.getState());
 
 ReactDOM.render(
-  <React.StrictMode>
+  // apply redux
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
