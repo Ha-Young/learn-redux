@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'; //  react-redux is in order to apply redux in react project
 import { createStore } from 'redux'; // createStore is have to load rootReducer
 import rootReducer from './modules'; // import folder name is import index.js inside folder
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 // console.log(store.getState());
 
 ReactDOM.render(

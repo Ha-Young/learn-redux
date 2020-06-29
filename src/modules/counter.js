@@ -2,7 +2,7 @@ const SET_DIFF = 'counter/SET_DIFF';
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
 
-export const setDiff = (idff) => ({ type: SET_DIFF, diff });
+export const setDiff = diff => ({ type: SET_DIFF, diff });
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
 
@@ -19,6 +19,7 @@ export default function counter(state = initialState, action) {
         diff: action.diff,
       };
     case INCREASE:
+      console.log('a');
       return {
         ...state,
         number: state.number + state.diff,
